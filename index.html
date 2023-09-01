@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real State: find your home</title>
     <!-- CSS Link -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <!-- Google Fonts -->
@@ -14,11 +14,248 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Icon Scout -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <!-- Swiper JS -->
+    <link
+    rel="stylesheet"
+    href="./swiper/swiper-bundle.min.css"
+    />
 </head>
 <body>
+    <!-- Header section starts-->
     
-    <h1>TESs</h1>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo"><i class="uil uil-house-user"></i>RState</a>
+            
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="uil uil-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nav__item">
+                        <a href="#popular" class="nav__link">
+                            <i class="uil uil-building"></i>
+                            <span>Residence</span>
+                        </a>
+                    </li>
     
+                    <li class="nav__item">
+                        <a href="#value" class="nav__link">
+                            <i class="uil uil-award-alt"></i>
+                            <span>Value</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class="uil uil-phone"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="button nav__button">
+                Subscribe
+            </a>
+
+        </nav>
+    </header>
+
+    <!-- Header section ends-->
+
+    <!-- Main section starts -->
+
+    <main class="main">
+        <!-- Home section starts -->
+
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Discover the<br> most suitable <br> property
+                    </h1>
+                    <p class="home__description">
+                        Find a variety of properties that suit you very easily, forget all difficulties in finding a residence for you.
+                    </p>
+
+                    <form action="" class="home__search">
+                        <i class="uil uil-location-point"></i>
+                        <input type="search" placeholder="Search by location..." class="home__search--input">
+                        <button class="button">Search</button>
+                    </form>
+
+                    <div class="home__value">
+                        <div>
+                            <h1 class="home__value--number">
+                                9k <span>+</span>
+                            </h1>
+                            <span class="home__value--description">
+                                Premium <br>products
+                            </span>
+                        </div>
+                        <div>
+                            <h1 class="home__value--number">
+                                1k <span>+</span>
+                            </h1>
+                            <span class="home__value--description">
+                                Happy <br>costumers
+                            </span>
+                        </div>
+                        <div>
+                            <h1 class="home__value--number">
+                                20 <span>+</span>
+                            </h1>
+                            <span class="home__value--description">
+                                Awards <br>won
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="home__images">
+                    <div class="home__orbe"></div>
+    
+                    <div class="home__image">
+                        <img src="./assets/home.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Home section ends -->
+        <!-- Logos section starts -->
+
+        <section class="logos section">
+            <div class="logos__container container grid">
+                <div class="logos__img">
+                    <img src="./assets/logo1.png" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="./assets/logo2.png" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="./assets/logo3.png" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="./assets/logo4.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Logos section ends -->
+        <!-- Popular section starts -->
+
+        <section class="popular section" id="popular">
+            <div class="container">
+                <span class="section__subtitle">Best choices</span>
+                <h2 class="section__title">
+                    Popular Residences<span>.</span>
+                </h2>
+
+                <div class="popular__container swiper">
+                    <div class="swiper-wrapper">
+                        <article class="popular__card swiper-slide">
+                            <img src="./assets/popular1.jpg" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>751,45
+                                </h2>
+                                <h3 class="popular__title">
+                                    Honey House
+                                </h3>
+                                <p class="popular__description">
+                                    Fake Avenue 533. <br>Miami, Florida
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="./assets/popular2.jpg" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>546,12
+                                </h2>
+                                <h3 class="popular__title">
+                                    Square Cabin
+                                </h3>
+                                <p class="popular__description">
+                                    Fake Street 854 <br>
+                                    Tampa Valley, Florida
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="./assets/popular3.jpg" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>985,54
+                                </h2>
+                                <h3 class="popular__title">
+                                    Dark Paradise
+                                </h3>
+                                <p class="popular__description">
+                                    True Avenue 5841 <br>
+                                    Riverwood, Florida
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="./assets/popular4.jpg" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>456,00
+                                </h2>
+                                <h3 class="popular__title">
+                                    Modern House
+                                </h3>
+                                <p class="popular__description">
+                                    True Street 684 <br>
+                                    South Shore, Florida
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="./assets/popular5.jpg" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>1014,84
+                                </h2>
+                                <h3 class="popular__title">
+                                    Candy House
+                                </h3>
+                                <p class="popular__description">
+                                    Not So Fake Avenue 2312 <br>
+                                    Apollo Beach, Florida
+                                </p>
+                            </div>
+                        </article>
+
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class="uil uil-arrow-circle-left"></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class="uil uil-arrow-circle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular section ends -->
+    </main>
+    
+    <!-- Main section ends -->
+
+
+    <script src="./swiper/swiper-bundle.min.js"></script>
+
     <script src="main.js"></script>
 </body>
 </html>
