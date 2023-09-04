@@ -68,13 +68,13 @@ button {
 }
 
 .section__title span {
-  color: rgb(255, 217, 0);
+  color: rgb(255, 132, 0);
 }
 
 .section__subtitle {
   display: block;
   font-size: 0.8rem;
-  color: rgb(255, 217, 0);
+  color: rgb(255, 132, 0);
 }
 
 .main {
@@ -83,7 +83,7 @@ button {
 
 .button {
   display: inline-block;
-  background: linear-gradient(100deg, #1755B2, #1B61CC);
+  background: linear-gradient(100deg, #1755B2, #5e89c9);
   color: #FFFFFF;
   font-size: 0.9rem;
   font-weight: 500;
@@ -98,6 +98,28 @@ button {
 }
 
 /* --- Swiper Styles ---*/
+.navigation__container {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  color: #1755B2;
+  cursor: pointer;
+}
+.navigation__container i {
+  transition: all 300ms ease;
+}
+.navigation__container i:hover {
+  color: rgb(255, 132, 0);
+}
+
+/* --- Accordion Styles --- */
+.accordion--open {
+  box-shadow: 0px 2px 4px 0px #000000;
+}
+.accordion--open .value__accordion--arrow i {
+  transform: rotate(180deg);
+}
+
 /* ============= HEADER SECTION =============== */
 .header {
   position: fixed;
@@ -109,7 +131,7 @@ button {
   transition: all 300ms ease;
 }
 .header .window-scroll {
-  background-color: #797C90;
+  background-color: #0C0C0D;
   transition: all 300ms ease;
 }
 .header .nav {
@@ -150,7 +172,7 @@ button {
   margin-bottom: 1.25rem;
 }
 .home .home__container .home__data .home__description {
-  color: #797C90;
+  color: #979797;
   margin-bottom: 2rem;
 }
 .home .home__container .home__data .home__value {
@@ -164,11 +186,11 @@ button {
   font-weight: 500;
 }
 .home .home__container .home__data .home__value .home__value--number span {
-  color: rgb(255, 217, 0);
+  color: rgb(255, 132, 0);
 }
 .home .home__container .home__data .home__value .home__value--description {
   display: flex;
-  color: #797C90;
+  color: #979797;
   font-size: 0.73rem;
 }
 .home .home__container .home__data .home__search {
@@ -177,7 +199,7 @@ button {
   display: flex;
   align-items: center;
   border-radius: 1rem;
-  border: 3px solid #797C90;
+  border: 3px solid #979797;
   margin-bottom: 2rem;
 }
 .home .home__container .home__data .home__search i {
@@ -191,10 +213,10 @@ button {
   margin: 0 0.5rem;
 }
 .home .home__container .home__data .home__search .home__search--input ::-moz-placeholder {
-  color: #797C90;
+  color: #979797;
 }
 .home .home__container .home__data .home__search .home__search--input ::placeholder {
-  color: #797C90;
+  color: #979797;
 }
 .home .home__container .home__images {
   position: relative;
@@ -224,6 +246,7 @@ button {
   padding-top: 1rem;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+  gap: 2rem;
 }
 .logos__container img {
   height: 60px;
@@ -245,6 +268,8 @@ button {
   margin: 0 auto 2rem;
   border-radius: 1rem;
   cursor: pointer;
+  box-shadow: 0px 2px 4px 0px #000000;
+  transition: all 300ms ease;
 }
 .popular__container .popular__card .popular__img {
   border-radius: 1rem;
@@ -255,11 +280,11 @@ button {
 }
 .popular__container .popular__card .popular__data .popular__price {
   font-size: 1.25rem;
-  color: grey;
+  color: #0C0C0D;
   margin-bottom: 0.25rem;
 }
 .popular__container .popular__card .popular__data .popular__price span {
-  color: rgb(255, 217, 0);
+  color: rgb(255, 132, 0);
 }
 .popular__container .popular__card .popular__data .popular__title {
   font-size: 1rem;
@@ -270,6 +295,273 @@ button {
 }
 .popular__container .popular__card:hover {
   box-shadow: 0px 5px 10px 0px #000000;
+}
+
+/* ============= VALUES SECTION ==============*/
+.value__container {
+  row-gap: 3rem;
+}
+.value__container .value__images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.value__container .value__images .value__orbe {
+  width: 266px;
+  height: 316px;
+  background-color: whitesmoke;
+  border-radius: 135px 135px 16px 16px;
+}
+.value__container .value__images .value__img {
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 125px 125px 12px 12px;
+  inset: 0;
+  margin: auto;
+  box-shadow: 0px 5px 10px 0px #000000;
+}
+.value__container .value__content .value__data .value__description {
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+.value__container .value__content .value__accordion {
+  display: grid;
+  row-gap: 1.5rem;
+}
+.value__container .value__content .value__accordion .value__accordion--item {
+  background-color: #FAFCFF;
+  border: 2px solid #E9ECF2;
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+}
+.value__container .value__content .value__accordion .value__accordion--item .value__accordion--header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.value__container .value__content .value__accordion .value__accordion--item .value__accordion--header i {
+  background-color: lightgray;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1755B2;
+  margin-right: 0.75rem;
+  transition: all 300ms ease;
+}
+.value__container .value__content .value__accordion .value__accordion--item .value__accordion--header .value__accordion--title {
+  font-size: 0.8rem;
+}
+.value__container .value__content .value__accordion .value__accordion--item .value__accordion--header .value__accordion--arrow {
+  display: inline-flex;
+  padding: 0.25rem;
+  border-radius: 2px;
+  font-size: 10px;
+  margin-left: auto;
+}
+.value__container .value__content .value__accordion .value__accordion--item .value__accordion--content {
+  overflow: hidden;
+  height: 0;
+  transition: all 300ms ease;
+}
+.value__container .value__content .value__accordion .value__accordion--item .value__accordion--content .value__accordion--description {
+  font-size: 0.73rem;
+  padding: 1.25rem 2.5rem 0 2.75rem;
+}
+
+/* =============== CONTACT SECTION ============== */
+.contact__container {
+  gap: 2rem;
+}
+.contact__container .contact__images {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.contact__container .contact__images .contact__orbe {
+  width: 266px;
+  height: 316px;
+  background-color: lightgrey;
+  border-radius: 135px 135px 16px 16px;
+}
+.contact__container .contact__images .contact__img {
+  position: absolute;
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 125px 125px 12px 12px;
+  inset: 0;
+  margin: auto;
+  box-shadow: 0px 10px 20px 0px #000000;
+}
+.contact__container .contact__content .contact__data .contact__description {
+  font-size: small;
+  margin-bottom: 2.5rem;
+}
+.contact__container .contact__content .contact__card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 0.75rem;
+}
+.contact__container .contact__content .contact__card .contact__card--box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FAFCFF;
+  border: 2px solid #E9ECF2;
+  padding: 1.25rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 300ms ease;
+}
+.contact__container .contact__content .contact__card .contact__card--box .contact__card--info {
+  display: flex;
+  align-items: flex-start;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.contact__container .contact__content .contact__card .contact__card--box .contact__card--description {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
+.contact__container .contact__content .contact__card .contact__card--box .contact__card--button {
+  font-size: 0.8rem;
+  padding: 14px 0;
+  width: 100%;
+  border-radius: 0.25rem;
+  background: #c2d4f0;
+  color: #1755B2;
+  font-weight: 600;
+  box-shadow: none;
+}
+.contact__container .contact__content .contact__card .contact__card--box .contact__card--button:hover {
+  background: #1755B2;
+  color: #FFFFFF;
+}
+.contact__container .contact__content .contact__card .contact__card--box:hover {
+  box-shadow: 0px 5px 10px 0px #000000;
+}
+.contact__container .contact__content .contact__card i {
+  padding: 6px;
+  background-color: #c2d4f0;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  color: #1755B2;
+}
+
+/* ============ SUBSCRIBE SECTION ==============*/
+.subscribe {
+  padding: 2.5rem 0;
+}
+.subscribe .subscribe__container {
+  background-color: #1755B2;
+  padding: 3rem 2rem;
+  border-radius: 1.25rem;
+  border: 6px solid #c2d4f0;
+  text-align: center;
+}
+.subscribe .subscribe__container .subscribe__title {
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+.subscribe .subscribe__container .susbscribe__description {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+.subscribe .subscribe__container .subscribe__button {
+  border: 2px solid #FFFFFF;
+  background: #5e89c9;
+  font-size: 0.8rem;
+}
+.subscribe .subscribe__container .subscribe__button:hover {
+  background: #1755B2;
+}
+
+/* ============== FOOTER SECTION ============== */
+.footer__container {
+  row-gap: 2.5rem;
+  place-content: center;
+}
+.footer__container .footer__logo {
+  color: #1755B2;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.footer__container i {
+  font-size: 1.25rem;
+}
+.footer__container .footer__description {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.footer__container .footer__content {
+  grid-template-columns: repeat(2, max-content);
+  gap: 2.5rem 3rem;
+}
+.footer__container .footer__content .footer__title {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.footer__container .footer__content .footer__links {
+  row-gap: 0.5rem;
+}
+.footer__container .footer__content .footer__links .footer__link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: grey;
+  transition: all 300ms ease;
+}
+.footer__container .footer__content .footer__links .footer__link:hover {
+  color: #1755B2;
+}
+.footer__container .footer__content .footer__social {
+  display: flex;
+  row-gap: 1rem;
+}
+.footer__container .footer__content .footer__social .footer__social--link {
+  font-size: 1.25rem;
+  color: grey;
+  transition: all 300ms ease;
+}
+.footer__container .footer__content .footer__social .footer__social--link:hover {
+  color: #1755B2;
+}
+
+.footer__info {
+  display: flex;
+  padding-bottom: 6rem;
+  margin-top: 5.5rem;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 1.5rem;
+}
+.footer__info .footer__copy {
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: grey;
+}
+.footer__info .footer__privacy {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.footer__info .footer__privacy a {
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: grey;
+  transition: all 300ms ease;
+}
+.footer__info .footer__privacy a:hover {
+  color: #1755B2;
 }
 
 @media screen and (max-width: 1023px) {
