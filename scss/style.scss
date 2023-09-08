@@ -140,6 +140,24 @@ button {
     }
 }
 
+/* ============= SCROLL BAR =============== */
+
+::-webkit-scrollbar {
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: $body-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: grey;
+    border-radius: .5rem;
+}
+
 /* --- Swiper Styles ---*/
 
 .navigation__container {
@@ -166,6 +184,7 @@ button {
         }
     }
 }
+
 
 
 
@@ -202,6 +221,7 @@ button {
                 color: $primary-color;
             }
         }
+        
     }
 }
 
@@ -519,6 +539,8 @@ button {
 
 .subscribe {
     padding: 2.5rem 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
     .subscribe__container {
         background-color: $primary-color;
         padding: 3rem 2rem;
@@ -601,7 +623,7 @@ button {
 }
 .footer__info {
     display: flex;
-    padding-bottom: 6rem;
+    padding-bottom: 8rem;
     margin-top: 5.5rem;
     flex-direction: column;
     text-align: center;
@@ -638,6 +660,17 @@ button {
 
 
 @media screen and (max-width: 1023px) {
+    /* --- Active Link --- */
+
+    .active-link {
+        background: linear-gradient(101deg, $primary-color, $primary-color--light);
+        color: $white;
+        box-shadow: $shadow-sm;
+        i {
+            color: white
+        }
+    }
+
     .nav__menu {
         position: fixed;
         bottom: 2rem;
@@ -659,8 +692,10 @@ button {
                 display: flex;
                 padding: .5rem;
                 border-radius: 50%;
+                
                 i {
                     font-size: 1.25rem;
+                    border-radius: 50%;
                 }
                 span {
                     display: none
@@ -673,8 +708,93 @@ button {
 
 
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1023px) {
     /* --- Responsive Typography --- */
+    
+}
+
+
+/* ================= MEDIA QUERIES ================= */
+
+/* --- Small Phones --- */
+@media screen and (max-width: 350px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .section {
+        padding: 3.5rem 0 1rem;
+    }
+
+    .home {
+        padding-bottom: 0;
+    }
+
+    .contact__container .contact__content .contact__card {
+        grid-template-columns: 180px;
+        justify-content: center;
+    }
+}
+
+/* --- Tablets --- */
+
+@media screen and (min-width: 560px) {
+    .contact__container .contact__content .contact__card {
+        grid-template-columns: 200px 200px;
+        justify-content: center;
+    }
+
+    .footer__container {
+        .footer__content {
+            grid-template-columns: repeat(3, max-content);
+        }
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .home__container {
+        grid-template-columns: repeat(2, 1fr);
+        padding-top: 2rem;
+        .home__orbe {
+            align-self: flex-end;
+        }
+        .home__data {
+            padding-bottom: 2rem;
+        }
+    }
+
+    .logos__container {
+        grid-template-columns: repeat(4, max-content);
+        justify-content: center;
+    }
+
+    .value__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .contact__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        .contact__images {
+            order: 1;
+        }
+    }
+
+    .subscribe__container {
+        margin: 3rem 7rem;
+    }
+
+    .footer__container {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-around;
+    }
+}
+
+/* --- Notebook --- */
+
+@media screen and (min-width: 1023px) {
     $biggest-font-size: 4rem;
     $h1-font-size: 2.25rem;
     $h2-font-size: 1.5rem;
@@ -682,4 +802,109 @@ button {
     $normal-font-size: 1rem;
     $small-font-size: 0.9rem;
     $smaller-font-size: 0.8rem;
+
+    body {
+        font-size: $normal-font-size;
+    }
+
+    .container {
+        max-width: 100%;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .section {
+        padding: 7.5rem 0 1rem;
+        .section__title {
+            font-size: $h2-font-size;
+        }
+        .section__subtitle {
+            font-size: $normal-font-size;
+        }
+    }
+
+    .nav {
+        height: calc($header-height + 1.5rem);
+        .nav__menu {
+            width: initial;
+            margin-left: auto;
+            .nav__list {
+                display: flex;
+                column-gap: 3rem;
+                .nav__link {
+                    color: $text-color-light;
+                    font-weight: bold;
+                    i {
+                        display: none;
+                    }
+                }
+                .active-link {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .home {
+        padding-bottom: 0;
+        .home__container {
+            column-gap: 2rem;
+            .home__data {
+                padding-bottom: 4rem;
+                .home__title {
+                    font-size: $biggest-font-size;
+                    margin-bottom: 2rem;
+                }
+                .home__description {
+                    margin-bottom: 3rem;
+                }
+                .home__value {
+                    column-gap: 3.5rem;
+                }
+            }
+            .home__images {
+                .home__orbe {
+                    width: 504px;
+                    height: 611px;
+                    border-radius: 256px 256px 0 0;
+                }
+                .home__image {
+                    width: 472px;
+                    height: 634px;
+                    border-radius: 236px 236px 12px 12px;
+                    bottom: -2.5rem
+                }
+            }
+        }
+    }
+
+    .logos__img img {
+        height: 100px;
+    }
+
+    .popular__container .popular__card {
+        width: 320px;
+        padding: .75rem .75rem 2rem;
+    }
+
+    .value__container {
+        align-items: flex-start;
+        column-gap: 5rem;
+        .value__images {
+            .value__orbe {
+                width: 501px;
+                height: 641px;
+                border-radius: 258px 258px 16px 16px;
+            }
+            .value__img {
+                width: 461px;
+                height: 601px;
+                border-radius: 238px 238px 12px 12px;
+                img {
+                    max-width: initial;
+                    height: auto;
+                }
+            }
+        }
+    }
 }
