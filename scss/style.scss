@@ -827,12 +827,12 @@ button {
         height: calc($header-height + 1.5rem);
         .nav__menu {
             width: initial;
-            margin-left: auto;
+            margin: auto;
             .nav__list {
                 display: flex;
                 column-gap: 3rem;
                 .nav__link {
-                    color: $text-color-light;
+                    color: $white;
                     font-weight: bold;
                     i {
                         display: none;
@@ -882,9 +882,15 @@ button {
         height: 100px;
     }
 
-    .popular__container .popular__card {
-        width: 320px;
-        padding: .75rem .75rem 2rem;
+    .popular__container{
+        max-width: 70%;
+        border: 5px solid $primary-color--lighten;
+        border-radius: 2rem;
+        .popular__card {
+            width: 320px;
+            padding: .75rem .75rem 2rem;
+            margin-top: 1rem;
+        }
     }
 
     .value__container {
@@ -906,5 +912,90 @@ button {
                 }
             }
         }
+        .value__content{
+            .value__data {
+                .value__description {
+                    font-size: $normal-font-size;
+                    margin-bottom: 2.5rem;
+                }
+            }
+            .value__accordion {
+                .value__accordion--item {
+                    padding: 1.25rem 1.25rem 1.25rem 1rem;
+                    .value__accordion--header {
+                        .value__accordion--title {
+                            font-size: $normal-font-size;
+                        }
+                    }
+                    .value__accordion--content {
+                        .value__accordion--description {
+                            font-size: $small-font-size;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contact__container {
+        .contact__images {
+            .contact__orbe {
+                width: 501px;
+                height: 641px;
+                border-radius: 258px 258px 16px 16px;
+            }
+            .contact__img {
+                width: 461px;
+                height: 601px;
+                border-radius: 238px 238px 12px 12px;
+                img {
+                    max-width: initial;
+                    height: auto;
+                }
+            }
+        }
+        .contact__content {
+            .contact__data {
+                .contact__description {
+                    font-size: $small-font-size;
+                }
+            }
+            .contact__card {
+                grid-template-columns: repeat(2, 200px);
+                .contact__card--box {
+                    padding: 1.5rem 1.5rem 1.5rem;
+                }
+            }
+        }
+    }
+
+    .subscribe {
+        .subscribe__container {
+            .subscribe__title {
+                font-size: 2.2rem;
+            }
+            .susbscribe__description {
+                font-size: $normal-font-size;
+                padding: 0 8rem;
+            }
+            .subscribe__button {
+                font-size: $normal-font-size;
+            }
+        }
+    }
+
+    .footer__container {
+        .footer__content {
+            grid-template-columns: repeat(4, max-content);
+        }
+    }
+    .footer__info {
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    body {
+        zoom: 1.5;
     }
 }
